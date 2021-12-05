@@ -21,27 +21,30 @@ const asking = function() {
     screens = prompt("Какие типы экранов нужно разработать?","Простые, Сложные, Интерактивные");
 
     do {
-        screenPrice = prompt("Сколько будет стоить данная работа?", "12000");
+        screenPrice = prompt("Сколько будет стоить данная работа?", 12000);
     } while (!isNumber(screenPrice));
 
     adaptive = confirm("Нужен ли адаптив на сайте?");
-}
+};
 
 
 //Сумма всех дополнительных услуг
 const getAllServicePrices = function() {
     let sum = 0;
+
     for (let i = 0; i < 2; i++) {
+        let price = 0;
+
         if (i === 0) {
             service1 = prompt("Какой дополнительный тип услуги нужен?");
         } else if (i === 1) {
             service2 = prompt("Какой дополнительный тип услуги нужен?");
         }
-        screenPrice = prompt("Сколько будет стоить данная работа?");
-        while (!isNumber(screenPrice)) {
-            screenPrice = prompt("Сколько будет стоить данная работа?");
-        } 
-        sum += +screenPrice
+        do {
+            price = prompt("Сколько будет стоить данная работа?");
+        } while (!isNumber(price));
+        
+        sum += +price;
     }
     return sum;
 };
@@ -63,7 +66,7 @@ const getRollbackMessage = function(price) {
 
 //Сумма стоимости верстки и стоимости доп услуг
 function getFullPrice(screenPrice, allServicePrices) {
-    return screenPrice + allServicePrices;
+    return +screenPrice + allServicePrices;
 }
 
 //Красивый title
