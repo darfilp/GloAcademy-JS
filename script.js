@@ -6,4 +6,6 @@ let array = num.toString().split("");
 for (let i = 0; i < array.length; i++) {
     count = count * array[i];
 }
-console.log(count);
+count = count**3;
+count = count.toString().substr(0,2)
+console.log(+count)
