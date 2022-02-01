@@ -12,7 +12,7 @@ const title = prompt("Как называется ваш проект?", ""),
  fullPrice = screenPrice + servicePrice1 + servicePrice2,
  servicePercentPrice = Math.ceil(fullPrice - (fullPrice * (rollback/100)));
 
- if (fullPrice === 30000) {
+ if (fullPrice === 30000 || fullPrice > 30000) {
      console.log('Даем скидку в 10%');
  } else if (fullPrice >= 15000 && fullPrice < 30000) {
      console.log('Даем скидку в 5%');
