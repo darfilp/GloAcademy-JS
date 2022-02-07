@@ -1,35 +1,39 @@
-
-const playwithNumber = function(min, max) {
+function play (min, max) {
 
     const num = Math.round(Math.random() * (max - min) + min);
-    console.log(num);
 
-    function tryAgain() {
-        const guessNumber = +prompt("Угадай число от 1 до 100", "1");
-        console.log(guessNumber);
+    function game() {
+        const user = +prompt('Введите число от 1 до 100', '')
+        console.log(num)
 
-        if (guessNumber === 0) {
-            alert("Игра окончена!");
-            return tryAgain();
+
+        if (user === 0) {
+            alert('Игра окончена');
+            return play();
         }
 
-        if (guessNumber !== num) {
-            if (guessNumber < num) {
-                alert("Загаданное число больше. Попробуйте снова");
-                tryAgain();
-            } else if (guessNumber > num){
-                alert("Загаданное число меньше. Попробуйте снова");
-                tryAgain();
+        if (num !== user) {
+            if (num > user) {
+                alert('Загаданное число больше. Попробуй еще раз');
+                game();
+            } else if (num < user) {
+                alert('Загаданное число меньше. Попробуй еще раз');
+                game();
             } else {
-                alert("Введи число!");
-                tryAgain();
+                alert('Хочешь меня обмануть? Введи число!');
+                game();
             }
-        } else if (guessNumber === num){
-            alert("Вы угадали!");
-        } 
-    }
+            
+        }
 
-    tryAgain();
+        if (num === user) {
+            alert('Прямо в цель');
+        }
+
+        
+    };
+    game();
 };
 
-playwithNumber(1, 100);
+
+play(1, 100);
