@@ -15,7 +15,7 @@ const appData = {
             appData.title = prompt('Как называется ваш проект?');
         } while (appData.isNumber(appData.title) || appData.title === null || appData.title === "");
 
-        for (let i = 0; i < 2; i++) {
+        for (let i = 0; i < 1; i++) {
             let name;
 
             do {
@@ -39,10 +39,10 @@ const appData = {
             } while (appData.isNumber(name) || name === null || name === "");
 
            if(name in appData.services) {
-            name = name + '*';
-            console.log('name1', name);
+            name = name + `${i}`;
+
            }
-           console.log('name', name);
+
             let price = 0;
     
             do {
