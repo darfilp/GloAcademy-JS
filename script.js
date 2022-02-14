@@ -15,14 +15,15 @@ const appData = {
             appData.title = prompt('Как называется ваш проект?');
         } while (appData.isNumber(appData.title) || appData.title === null || appData.title === "");
 
-        for (let i = 0; i < 1; i++) {
+        for (let i = 0; i < 2; i++) {
             let name;
+            let price = 0;
 
             do {
                 name = prompt('Какие типы экранов нужно разработать?');
             } while (appData.isNumber(name) || name === null || name === "");
 
-            let price = 0;
+            
 
             do {
                 price = prompt('Сколько будет стоить данная работа?');
@@ -95,12 +96,18 @@ const appData = {
         appData.getServicePercentPrices(appData.fullPrice);
         appData.getRollbackMessage(appData.fullPrice);
         appData.logger();
+        console.log(appData.title)
+        console.log(appData.screens)
+        console.log(appData.screenPrice)
+        console.log(appData.services)
+        console.log(appData.fullPrice)
+        console.log(appData.servicePercentPrice) //servicePercentPrice
     },
     logger: function() {
         for (let key in appData) {
-            console.log(key + appData[key]);
+            //console.log(key + appData[key]);
         }
-        console.log(appData.services);
+        //console.log(appData.services);
     }
 };
 
