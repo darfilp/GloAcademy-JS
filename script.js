@@ -71,14 +71,14 @@ const appData = {
             const input = screen.querySelector('input');
             const selectedName = select.options[select.selectedIndex].textContent;
 
-            
+            appData.screens.push({id: index, name: selectedName, price: +input.value * +select.value, count: +input.value});
+
             if (select.selectedIndex === 0 || input.value === '') {
                 return
-                //window.location.reload()
-            } else {
-                appData.screens.push({id: index, name: selectedName, price: +input.value * +select.value, count: +input.value});
             }
-        })
+        });
+
+        
     },
     addServises() {
         otherItemsPercent.forEach(item => {

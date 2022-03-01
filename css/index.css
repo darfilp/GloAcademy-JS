@@ -745,5 +745,6 @@ button:hover {
 
 button:disabled {
   cursor: not-allowed;
+  background-color: gray
 }
 /*# sourceMappingURL=index.css.map */
