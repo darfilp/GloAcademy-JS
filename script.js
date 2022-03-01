@@ -73,7 +73,7 @@ const appData = {
 
             
             if (select.selectedIndex === 0 || input.value === '') {
-                alert('Нужно заполнить все поля');
+                return
                 //window.location.reload()
             } else {
                 appData.screens.push({id: index, name: selectedName, price: +input.value * +select.value, count: +input.value});
