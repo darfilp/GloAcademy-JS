@@ -42,11 +42,15 @@ const appData = {
     },
     start: function() {
         appData.addScreens();
+        const flag = appData.check();
+        if (flag === true) {
+            return
+        }
         appData.addServises();
         appData.addPrices();
         // appData.getServicePercentPrices(appData.fullPrice);
         // appData.logger();
-        console.log(appData);
+        //console.log(appData);
         appData.showResult();
     },
     changeInput() {
@@ -54,6 +58,8 @@ const appData = {
         document.querySelector('.range-value').textContent = range.value + '%'
     }, 
     showResult() {
+        
+
         total.value = appData.screenPrice;
         totalInput2.value = appData.countScreen;
         totalInput3.value = appData.servicePricesPercent + appData.servicePricesNumber;
@@ -73,12 +79,23 @@ const appData = {
 
             appData.screens.push({id: index, name: selectedName, price: +input.value * +select.value, count: +input.value});
 
-            if (select.selectedIndex === 0 || input.value === '') {
-                return
-            }
+            // if (select.selectedIndex === 0 || input.value === '') {
         });
-
         
+    },
+    check() {
+        let count = 0;
+        const d = appData.screens.map(item => {
+            if (item.price === 0) {
+                count++
+            }
+            })
+        
+        if (count >= 1) {
+            return true
+        } else {
+            return false
+        }
     },
     addServises() {
         otherItemsPercent.forEach(item => {
