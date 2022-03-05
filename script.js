@@ -39,32 +39,38 @@ const appData = {
 
     init: function() {
         this.addTitle();
-        startBtn.addEventListener('click', this.start);
-        buttonPlus.addEventListener('click', this.addScreensBlock);
-        range.addEventListener('input', this.changeInput);
-        resetBtn.addEventListener('click', this.reset)
+        startBtn.addEventListener('click', () => {
+            this.start();
+        });
+        buttonPlus.addEventListener('click', () => {
+            this.addScreensBlock();
+        });
+        range.addEventListener('input', () => {
+            this.changeInput();
+        });
+        resetBtn.addEventListener('click', () => {
+            this.reset();
+        });
     },
     
     start: function() {
-        appData.addScreens();
-        const flag = appData.check();
+        this.addScreens()
+        const flag = this.check();
         if (flag === true) {
             return
         }
-        appData.addServises();
-        appData.addPrices();
-        // appData.getServicePercentPrices(appData.fullPrice);
-        // appData.logger();
-        appData.showResult();
-        appData.blockScreen(true);
+        this.addServises();
+        this.addPrices();
+        this.showResult();
+        this.blockScreen(true);
         startBtn.style.display = 'none';
         resetBtn.style.display = 'flex';
     },
 
     reset() {
-        appData.changeBtn();
-        appData.resetValue();
-        appData.blockScreen(false);
+        this.changeBtn();
+        this.resetValue();
+        this.blockScreen(false);
     },
 
     resetValue() {
