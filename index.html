@@ -6,8 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="script.js" defer></script>
+    <script src="k.js" defer></script>
 </head>
 <body>
-    
+    <input type="text" placeholder="Ваше имя">
+    <input type="text" placeholder="Ваша фамилия">
+    <input type="range" min="18" max="89" step="1">
+    <input type="radio" id="children1" name="children">
+    <label for="children1">Есть</label>
+    <input type="radio" id="children2" name="children">
+    <label for="children2">Нет</label>
+    <select name="pets" id="pet-select">
+    <option value="driver">Водитель</option>
+    <option value="plumber">Слесарь</option>
+    </select>
+    <button>Добавить</button>
+
+    <table>
+    <tr><th>Имя</th><th>Фамилия</th><th>Возраст</th><th>Дети</th><th>Должность</th><th>Компания</th><th>Зарплата</th><th>Пол</th><th>График</th></tr>
+    <tr><td>Суслов</td><td>Степан</td><td>22</td><td>Нет</td><td>Водитель</td><td>'ПАО'</td><td>12000</td><td>Мужской</td><td>2/2</td> <td><button>Удалить</button></td></tr>
+    </table>
+</select>
 </body>
 </html>
